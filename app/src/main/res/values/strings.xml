@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Homework 3.2.2</string>
+
+    <string name="switch_scientific">Switch scientific</string>
+
+    <string name="sin_func">sin</string>
+    <string name="cos_func">cos</string>
+    <string name="tan_func">tan</string>
+    <string name="inv_trig">%s⁻¹</string>
+</resources>
