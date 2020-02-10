@@ -13,14 +13,6 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 	private static final char POINT = '.';
 
-	private static final int DOT_BUTTON = R.id.buttonDot;
-	private static final int C_BUTTON = R.id.buttonClear;
-	private static final int SWITCHSIGN_BUTTON = R.id.buttonSwitchSign;
-	private static final int SIN_BUTTON = R.id.buttonSin;
-	private static final int COS_BUTTON = R.id.buttonCos;
-	private static final int TAN_BUTTON = R.id.buttonTan;
-	private static final int TRIGINV_BUTTON = R.id.buttonTrigInv;
-
 	private TextView textView;
 	private Button[] buttons;
 	private View standardCalcPad;
@@ -75,13 +67,13 @@ public class MainActivity extends AppCompatActivity {
 		buttons[8] = findViewById(R.id.button8);
 		buttons[9] = findViewById(R.id.button9);
 
-		buttons[10] = findViewById(DOT_BUTTON);
-		buttons[11] = findViewById(C_BUTTON);
-		buttons[12] = findViewById(SWITCHSIGN_BUTTON);
-		buttons[13] = findViewById(SIN_BUTTON);
-		buttons[14] = findViewById(COS_BUTTON);
-		buttons[15] = findViewById(TAN_BUTTON);
-		buttons[16] = findViewById(TRIGINV_BUTTON);
+		buttons[10] = findViewById(R.id.buttonDot);
+		buttons[11] = findViewById(R.id.buttonClear);
+		buttons[12] = findViewById(R.id.buttonSwitchSign);
+		buttons[13] = findViewById(R.id.buttonSin);
+		buttons[14] = findViewById(R.id.buttonCos);
+		buttons[15] = findViewById(R.id.buttonTan);
+		buttons[16] = findViewById(R.id.buttonTrigInv);
 
 		standardCalcPad = findViewById(R.id.standardPad);
 		scientificCalcPad = findViewById(R.id.scientificPad);
@@ -89,16 +81,16 @@ public class MainActivity extends AppCompatActivity {
 
 	private void handlePress(View v) {
 		switch (v.getId()) {
-			case DOT_BUTTON:
+			case R.id.buttonDot:
 				dotPress();
 				break;
-			case C_BUTTON:
+			case R.id.buttonClear:
 				clear();
 				break;
-			case SWITCHSIGN_BUTTON:
+			case R.id.buttonSwitchSign:
 				switchSign();
 				break;
-			case TRIGINV_BUTTON:
+			case R.id.buttonTrigInv:
 				invertTrigButtons();
 				break;
 			default:
@@ -158,8 +150,7 @@ public class MainActivity extends AppCompatActivity {
 
 	private void switchScientific() {
 		scientificMode = !scientificMode;
-		int off = View.INVISIBLE, on = View.VISIBLE;
-		standardCalcPad.setVisibility(scientificMode ? off : on);
-		scientificCalcPad.setVisibility(scientificMode ? on : off);
+		standardCalcPad.setVisibility(scientificMode ? View.INVISIBLE : View.VISIBLE);
+		scientificCalcPad.setVisibility(scientificMode ? View.VISIBLE : View.INVISIBLE);
 	}
 }
